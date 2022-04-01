@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    margin-top: 10px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#superliga {
+    display: flex;
+    width: 90%;
+    margin-top: 50px;
+}
+
+#superliga img, #contact img {
+    width: 400px;
+    border-radius: 5%;
+}
+
+#superliga p, #contact p {
+    margin: 10px;
+}
+
+#contact {
+    display: flex;
+}
