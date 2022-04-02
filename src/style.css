@@ -52,11 +52,11 @@ ul {
 .item-competition {
     cursor: pointer;
     margin: 10px 0;
+    font-weight: bold;
 }
 
 .item-competition:hover {
     text-decoration: underline;
-    font-weight: bold;
 }
 
 .list-descriptions li {
@@ -64,5 +64,17 @@ ul {
 }
 
 .list-descriptions li.active {
-    display: block !important;
+    display: block;
+}
+
+.list-questions dt {
+    cursor: pointer;
+}
+
+.list-questions dd {
+    display: none;
+}
+
+.list-questions dd.active {
+    display: block;
 }
