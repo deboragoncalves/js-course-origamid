@@ -7,28 +7,31 @@ h1, h2 {
     margin-top: 10px;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
 }
 
-#superliga {
+#competitions {
     display: flex;
-    width: 90%;
     margin-top: 50px;
     padding-left: 50px;
 }
 
-#superliga img, #contact img {
+#contact img {
     width: 400px;
     border-radius: 5%;
 }
 
-#superliga p, #contact p {
+#contact p {
     margin: 10px;
 }
 
-#faq {
+.main-container h1, #faq {
     padding-left: 50px;
 }
 
@@ -44,4 +47,22 @@ h1, h2 {
     padding: 5px 0;
     display: flex;
     justify-content: center;
+}
+
+.item-competition {
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.item-competition:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.list-descriptions li {
+    display: none;
+}
+
+.list-descriptions li.active {
+    display: block !important;
 }
