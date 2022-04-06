@@ -6,4 +6,4 @@ answerExercise01.innerHTML = "String, Object, Number, Boolean, Array";
 // Exercício 02: Listar 5 objetos do browser
 // Se não existir no browser, erro no console
 let answerExercise02 = document.querySelector("#exercise-02-answer");
-answerExercise01.innerHTML = "Element, HTMLCollection, NodeList, Window, Document, Console";
+answerExercise02.innerHTML = "Element, HTMLCollection, NodeList, Window, Document, Console";
