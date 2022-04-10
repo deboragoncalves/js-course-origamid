@@ -1,6 +1,7 @@
 // Exercício 01: Retorne um número aleatório entre 1050 e 2000
 
 // Fórmula: Math.floor(Math.random() * (max - min + 1)) + min;
+// Math.floor - arredondar para baixo
 
 const randomNumber = () => {
     console.log("Exercício 01: ");
@@ -16,9 +17,10 @@ randomNumber();
 // Exercício 02: Retorne o maior número da lista abaixo:
 const numbers = "4, 5, 20, 8, 9";
 
+// 01 - usando sort
 const maxNumber = numbers => {
     if (numbers.length > 0) {
-        
+
         // Array
         let arrayNumbers = numbers.split(", ");
 
@@ -29,11 +31,26 @@ const maxNumber = numbers => {
         console.log("Exercício 02: ");
         console.log("Número maior: " + maxNumber);
 
-        return arrayNumbers;
+        return maxNumber;
     }
 }
 
-maxNumber(numbers);
+// 02 - usando spread, espalha os itens do array
+const maxNumber2 = numbers => {
+    if (numbers.length > 0) {
+
+        // Array
+        let arrayNumbers = numbers.split(", ");
+
+        // Spread: passa cada item do array como argumento para a função max: Math.max(arrayNumbers[0], arrayNumbers[1]...)
+        let maxNumber = Math.max(...arrayNumbers);
+        console.log("Exercício 02: ");
+        console.log("Número maior: " + maxNumber);
+        return maxNumber;
+    }
+}
+
+maxNumber2(numbers);
 
 /* Exercício 03: Crie uma função para limpar os preços e retornar os números com centavos arredondados
 e depois retorne a soma total */
@@ -51,25 +68,42 @@ const totalPrices = prices => {
         let sumPrices = 0;
 
         prices.forEach(price => {
-            // Retirar espaços e R$
-            price = price.toString();
-            price = price.trim();
-            price = price.replaceAll("R$", "");
-            price = price.replaceAll("r$", "");
-
-            // Transformar pra float
-            price = parseFloat(price);
-
-            // Arredondar com Math.round
-            price = Math.round(price);
-            console.log("Preço: R$ " + price);
+            let correctPrice = cleanPrice(price);
+            console.log("Preço: R$ " + correctPrice);
 
             // Soma
-            sumPrices += price;
+            sumPrices += correctPrice;
         });
 
-        console.log("Soma dos preços: R$ " + sumPrices);
+        // Formatar para BR
+        sumPrices = sumPrices.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+        console.log("Soma dos preços: " + sumPrices);
     }
+}
+
+const cleanPrice = price => {
+
+    if (price) {
+        // Retirar espaços e R$
+        price = price.toString();
+        price = price.trim();
+        price = price.toUpperCase();
+        price = price.replaceAll("R$", "");
+
+        // Substituir vírgula por ponto
+        price = price.replaceAll(",", ".");
+
+        // Transformar pra float
+        price = parseFloat(price);
+
+        // Arredondar com toFixed(2), 2 casas
+        price = price.toFixed(2);
+
+        // Transformar em float novamente, toFixed() retorna string
+        price = parseFloat(price);
+        return price;
+    }
+
 }
 
 totalPrices(prices);
