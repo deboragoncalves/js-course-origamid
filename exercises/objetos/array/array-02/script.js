@@ -109,8 +109,6 @@ const items = [
     }
 ]
 
-// Retornar array apenas com os preços
-
 let totalCosts = 0;
 
 const totalCostsItems = items => {
