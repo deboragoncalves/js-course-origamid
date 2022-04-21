@@ -38,7 +38,6 @@ let lengthParagraphs02 = () => {
         let textCurrentParagraph = paragraph.innerText;
         let lengthParagraphs = lastParagraph + textCurrentParagraph.length;
         console.log("Texto atual: " + textCurrentParagraph);
-        console.log("Tamanho texto atual: " + lengthParagraphs);
         return lengthParagraphs;
     }, 0);
 
