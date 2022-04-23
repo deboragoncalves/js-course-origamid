@@ -122,7 +122,7 @@ const getDataProperties = data => {
 
 console.log("Exercício 04: ");
 console.log("Propriedades String: ");
-getDataProperties(String);
+getDataProperties(String.prototype);
 
 console.log("Propriedades Array: ");
-getDataProperties(Array);
+getDataProperties(Array.prototype);
