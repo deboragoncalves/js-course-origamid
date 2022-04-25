@@ -30,7 +30,7 @@
                     <a class="nav-link">Contato</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
+                    <a class="nav-link" data-navbar="login">Login</a>
                 </li>
             </ul>
         </div>
@@ -86,6 +86,32 @@
         </section>
         <section id="footer">
             <p>Todos os direitos reservados.</p>
+            <!-- Utilizar data-modal para selecionar no JS
+            Container modal - área fora
+            -->
+            <div class="modal" tabindex="-1"  id="modal-login" data-modal="container">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Login</h5>
+                      <button type="button" data-modal="close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-control container-display-column">
+                            <label for="email">E-mail:</label>
+                            <input type="text" id="email" name="email" placeholder="E-mail">
+                        </div>
+                        <div class="form-control container-display-column">
+                            <label for="password">Senha:</label>
+                            <input type="password" id="password" name="password" placeholder="Senha">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-outline-success">Entrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </section>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
