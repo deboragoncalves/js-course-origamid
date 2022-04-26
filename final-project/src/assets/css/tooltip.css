@@ -1,0 +1,10 @@
+.tooltip-map {
+    z-index: 5000;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    max-width: 600px;
+    border-radius: 5px;
+}
