@@ -44,7 +44,11 @@ ul {
     margin: 10px;
 }
 
-.main-container h1, #faq {
+.main-container h1 {
+    padding: 40px 0 0 50px;
+}
+
+#faq {
     padding-left: 50px;
 }
 
