@@ -1,8 +1,15 @@
+import clickOutsideElement from "./click-outside-element.js";
+
+const classActive = "active";
+const eventClick = "click";
+const eventTouchStart = "touchstart";
+let eventsShowMenu;
+
 const dropdownMenuAbout = () => {
     let menuAbout = document.querySelector("[data-menu-dropdown='about']");
 
     if (menuAbout) {
-        let eventsShowMenu = ['click', 'touchstart'];
+        eventsShowMenu = [eventClick, eventTouchStart];
 
         // Touchstart - acontece de forma instantânea, click - delay
         eventsShowMenu.forEach(eventShow => {
@@ -17,8 +24,15 @@ const showMenuDropdown = event => {
 
     if (dropdownMenuAbout) {
         // Toggle: remove se existir; se não houver, add
-        dropdownMenuAbout.classList.toggle("active");
+        dropdownMenuAbout.classList.toggle(classActive);
     }
+
+    if (!eventsShowMenu || eventsShowMenu.length < 0) {
+        eventsShowMenu.push(eventClick);
+        eventsShowMenu.push(eventTouchStart);
+    }
+
+    clickOutsideElement(dropdownMenuAbout, eventsShowMenu);
 }
 
 export default dropdownMenuAbout;
