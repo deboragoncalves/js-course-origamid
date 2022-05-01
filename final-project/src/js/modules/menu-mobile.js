@@ -1,5 +1,3 @@
-import clickOutsideElement from './click-outside-element.js';
-
 let listMenu = document.querySelector("#list-navbar");
 let buttonMenuMobile = document.querySelector("[data-menu-mobile='button']");
 
