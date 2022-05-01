@@ -67,7 +67,12 @@ const stopCronometer = () => {
     if (!containerCronometer) return;
 
     number = 0;
+    clearInterval(interval);
     containerCronometer.innerHTML = number;
+
+    // Habilitar button init
+    if (!buttonInit) return;
+    buttonInit.removeAttribute("disabled");
 }
 
 createCronometer();
