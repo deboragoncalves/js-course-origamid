@@ -7,6 +7,7 @@ import mapTooltip from './modules/map-tooltip.js';
 import dropdownMenu from './modules/dropdown-menu.js';
 import menuMobile from './modules/menu-mobile.js';
 import numberTitles from './modules/number-titles.js';
+import timeOperation from './modules/time-operation.js';
 
 window.onload = () => {
     addLinksMenu();
@@ -18,6 +19,7 @@ window.onload = () => {
     dropdownMenu();
     menuMobile();
     numberTitles();
+    timeOperation();
 };
 
 /* TODO: Adicionar imagens às competições
