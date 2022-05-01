@@ -10,7 +10,7 @@ const timeOperation = () => {
     week = setStringToNumber(week);
     hours = setStringToNumber(hours);
 
-    isOpen(week, hours);
+    openClosed(week, hours);
 }
 
 const setStringToNumber = array => {
@@ -22,7 +22,7 @@ const setStringToNumber = array => {
     return newArray;
 }
 
-const isOpen = (arrayWeek, arrayHours) => {
+const openClosed = (arrayWeek, arrayHours) => {
     if (!arrayWeek || arrayWeek.length < 0 || !arrayHours || arrayHours.length < 0) return;
 
     let textOpenClose = document.querySelector("#open-close");
@@ -34,8 +34,6 @@ const isOpen = (arrayWeek, arrayHours) => {
     let currentDay = currentDate.getDay();
     let currentHour = currentDate.getHours();
 
-    console.log(arrayWeek);
-    console.log(currentDay);
     let weekOpen = arrayWeek.includes(currentDay);
     let hourOpen = currentHour >= arrayHours[0] && currentHour < arrayHours[1];
 
