@@ -2,6 +2,7 @@
 @import 'tooltip.css';
 @import 'dropdown-menu.css';
 @import 'menu-mobile.css';
+@import 'number-titles.css';
 
 body {
     margin: 0;
@@ -64,7 +65,7 @@ ul {
     padding: 40px 0 0 50px;
 }
 
-#faq {
+#faq, #number-titles-men, #number-titles-women {
     padding-left: 50px;
 }
 
