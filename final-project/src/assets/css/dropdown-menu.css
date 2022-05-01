@@ -5,16 +5,29 @@
     display: none;
     position: absolute;
     background-color: rgba(56, 52, 52, 0.3);
+    height: 65px;
 }
 
-[data-menu-dropdown='about']:hover .dropdown-menu-about, [data-menu-dropdown='about'] .active {
-    display: block;
+[data-menu-dropdown='about']:hover .dropdown-menu-about  {
+    display: block !important;
 }
 
-.dropdown-menu-about li a {
+.item-dropdown {
     color: white !important;
+    text-decoration: none;
+    padding: 10px 5px;
 }
 
 .dropdown-menu-about li a:hover {
     font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .dropdown-menu-about {
+        position: static;
+    }
+
+    .item-dropdown {
+        color: black !important;
+    }
 }

@@ -1,0 +1,13 @@
+[data-menu-mobile="button"] {
+    border: none;
+    background: none;
+    display: none;
+}
+
+@media (max-width: 700px) {
+    [data-menu-mobile="button"] {
+        display: block;
+        padding: 20px;
+        cursor: pointer;
+    }
+}

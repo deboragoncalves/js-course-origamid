@@ -12,35 +12,36 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <nav class="container-navbar bg-light">
+        <!-- Atributos aria: facilitam a acessibilidade 
+            Controls: indica ao leitor de tela que o button está controlando o elemento com id X
+        -->
+        <button data-menu-mobile="button" aria-expanded="false" aria-controls="list-navbar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link">Competições</span></a>
-                </li>
-                <li class="nav-item" data-menu-dropdown="about">
-                    <a class="nav-link">Sobre</a>
-                    <ul class="dropdown-menu-about"> 
-                        <li><a class="nav-link">História</a></li>
-                        <li><a class="nav-link">Equipe</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link">Dúvidas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link">Contato</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-navbar="login">Login</a>
-                </li>
-            </ul>
-        </div>
+        <ul id="list-navbar">
+            <li>
+                <a>Competições</a>
+            </li>
+            <li data-menu-dropdown="about">
+                <a>Sobre</a>
+                <ul class="dropdown-menu-about">
+                    <li><a class="item-dropdown">História</a></li>
+                    <li><a class="item-dropdown">Equipe</a></li>
+                </ul>
+            </li>
+            <li>
+                <a>Dúvidas</a>
+            </li>
+            <li>
+                <a>Contato</a>
+            </li>
+            <li>
+                <a data-navbar="login">Login</a>
+            </li>
+        </ul>
     </nav>
     <div class="main-container">
         <h1>Conferedação Brasileira de Voleibol</h1>
@@ -56,8 +57,10 @@
             <ul class="list-descriptions">
                 <li>
                     <p>
-                        A Superliga é a principal competição adulta de voleibol do país, contendo times das regiões Sul, Sudeste
-                        e Norte, nos naipes feminino e masculino. Atualmente tem como <i>"nameright"</i> a empresa de apostas
+                        A Superliga é a principal competição adulta de voleibol do país, contendo times das regiões Sul,
+                        Sudeste
+                        e Norte, nos naipes feminino e masculino. Atualmente tem como <i>"nameright"</i> a empresa de
+                        apostas
                         esportivas 1XBET.
                     </p>
                 </li>
@@ -96,29 +99,30 @@
             <!-- Utilizar data-modal para selecionar no JS
             Container modal - área fora
             -->
-            <div class="modal" tabindex="-1"  id="modal-login" data-modal="container">
+            <div class="modal" tabindex="-1" id="modal-login" data-modal="container">
                 <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Login</h5>
-                      <button type="button" data-modal="close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-control container-display-column">
-                            <label for="email">E-mail:</label>
-                            <input type="text" id="email" name="email" placeholder="E-mail">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Login</h5>
+                            <button type="button" data-modal="close" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
                         </div>
-                        <div class="form-control container-display-column">
-                            <label for="password">Senha:</label>
-                            <input type="password" id="password" name="password" placeholder="Senha">
+                        <div class="modal-body">
+                            <div class="form-control container-display-column">
+                                <label for="email">E-mail:</label>
+                                <input type="text" id="email" name="email" placeholder="E-mail">
+                            </div>
+                            <div class="form-control container-display-column">
+                                <label for="password">Senha:</label>
+                                <input type="password" id="password" name="password" placeholder="Senha">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-outline-success">Entrar</button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                      <button type="submit" class="btn btn-outline-success">Entrar</button>
-                    </div>
-                  </div>
                 </div>
-              </div>
+            </div>
         </section>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -6,7 +6,7 @@ const clickOutsideElement = (element, events) => {
     const removeClassActive = event => {
         let elementClicked = event.target;
     
-        // Se a ul do menu contém o item clicado (um das li's, ex), não remove
+        // Se a ul do menu contém o item clicado (um das li's, ex), remove
         if (!element.contains(elementClicked)) {
             element.classList.remove(classActive);
             
