@@ -1,0 +1,18 @@
+form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.container-input {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
