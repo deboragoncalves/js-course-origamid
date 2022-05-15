@@ -2,6 +2,10 @@ var formButtonCreator = document.querySelector("#formButtonCreator");
 var buttonTest = document.querySelector("#buttonTest");
 var codeCss = document.querySelector(".codeCss");
 
+window.onload = () => {
+    initStylesLocalStorage();
+}
+
 // Centralizar todas as funções dentro de um objeto
 
 const changeStyleButton = {
@@ -44,7 +48,22 @@ const changeFormButton = event => {
     // objeto[chave] ou objeto.chave
 
     changeStyleButton[eventChange](valueChange);
+    saveStyleLocalStorage(eventChange, valueChange);
     showCodeCss();
+}
+
+const saveStyleLocalStorage = (eventChange, valueChange) => {
+    if (!eventChange || !valueChange) return;
+    localStorage.setItem(eventChange, valueChange);
+}
+
+const initStylesLocalStorage = () => {
+    let propertiesLocalStorage = Object.keys(localStorage);
+
+    propertiesLocalStorage.forEach(property => {
+        formButtonCreator.elements[property].value = localStorage.getItem(property);
+        changeStyleButton[property](localStorage.getItem(property));
+    });
 }
 
 const showCodeCss = () => {
