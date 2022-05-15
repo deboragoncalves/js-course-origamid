@@ -61,20 +61,23 @@ const initStylesLocalStorage = () => {
     let propertiesLocalStorage = Object.keys(localStorage);
 
     propertiesLocalStorage.forEach(property => {
-        formButtonCreator.elements[property].value = localStorage.getItem(property);
-        changeStyleButton[property](localStorage.getItem(property));
+        if (localStorage.getItem(property).length > 0) {
+            formButtonCreator.elements[property].value = localStorage.getItem(property);
+            changeStyleButton[property](localStorage.getItem(property));
+        };
     });
 }
 
 const showCodeCss = () => {
     codeCss.innerHTML = "";
     if (!buttonTest) return;
+
     // Dentro do style tem a propriedade cssText, exibindo em forma de texto o código
     let arrayCssText = buttonTest.style.cssText.split(";");
-    console.log(arrayCssText);
+    arrayCssText.splice(arrayCssText.length - 1);
 
     for (let textCss of arrayCssText) {
-        codeCss.innerHTML += `${textCss}\n`;
+        codeCss.innerHTML += `${textCss};<br>`;
     }
 }
 
