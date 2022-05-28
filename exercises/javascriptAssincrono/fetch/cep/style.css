@@ -1,0 +1,15 @@
+.container-cep, #containerAddress {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#invalidCep {
+    color: red;
+    margin-top: 15px;
+    display: none;
+}
+
+.container-cep input, #buttonCep {
+    margin-top: 15px;
+}
