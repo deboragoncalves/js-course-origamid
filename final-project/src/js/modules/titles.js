@@ -56,7 +56,7 @@ const showTitles = title => {
 
 const setNameCompetition = (nameCompetition, elementNameCompetition) => {
     // Nomes competições
-    nameCompetition === "VNL" ? elementNameCompetition.innerHTML = "Voleyball National League: " :
+    nameCompetition === "VNL" ? elementNameCompetition.innerHTML = "Liga das Nações: " :
         nameCompetition === "OLYMPICS" ? elementNameCompetition.innerHTML = "Olimpíadas: " :
             nameCompetition === "WORLDCHAMPIONSHIP" ? elementNameCompetition.innerHTML = "Campeonato Mundial: " : null;
 

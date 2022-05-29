@@ -8,6 +8,7 @@ import dropdownMenu from './modules/dropdown-menu.js';
 import menuMobile from './modules/menu-mobile.js';
 import titles from './modules/titles.js';
 import timeOperation from './modules/time-operation.js';
+import watchGames from './modules/watch-games.js';
 
 window.onload = () => {
     addLinksMenu();
@@ -20,6 +21,7 @@ window.onload = () => {
     menuMobile();
     titles();
     timeOperation();
+    watchGames()
 };
 
 /* TODO: Adicionar imagens às competições

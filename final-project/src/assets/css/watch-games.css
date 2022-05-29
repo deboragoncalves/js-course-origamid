@@ -1,0 +1,14 @@
+#watch-games {
+    padding-left: 50px;
+    margin: 30px 0;
+}
+
+#watch-games a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#watch-games a:hover {
+    text-decoration: underline;
+}
