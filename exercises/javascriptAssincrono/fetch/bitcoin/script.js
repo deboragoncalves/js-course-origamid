@@ -37,7 +37,8 @@ const getBitconValue = () => {
 
             let bitcoinValueText = document.querySelector("#bitcoinValue");
             bitcoinValueText.innerHTML = bitcoinValue;
-        });
+        })
+        .catch(error => console.log(error));
 }
 
 // atualizar a cada 30ms

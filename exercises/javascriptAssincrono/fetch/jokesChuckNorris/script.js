@@ -20,12 +20,13 @@ const getJokeChuckNorris = () => {
     fetch(URL_CHUCK_NORRIS)
         .then(response => response.json())
         .then(responseJson => {
-            
+
             // esse then recebe como parâmetro o que retorna do último then
             if (!responseJson || !responseJson.value) return;
 
             jokeChuckNorris = responseJson.value;
-        });
+        })
+        .catch(error => console.log(error));
 }
 
 const showJoke = joke => {

@@ -45,7 +45,8 @@ const submitCep = e => {
             messageInvalidCep.innerHTML = "";
             messageInvalidCep.style.display = "none";
             showAddress(responseJson);
-        });
+        })
+        .catch(error => console.log(error));
 }
 
 const showAddress = dataAddress => {
