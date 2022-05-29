@@ -20,10 +20,11 @@ const getJokeChuckNorris = () => {
     fetch(URL_CHUCK_NORRIS)
         .then(response => response.json())
         .then(responseJson => {
+            
+            // esse then recebe como parâmetro o que retorna do último then
             if (!responseJson || !responseJson.value) return;
 
             jokeChuckNorris = responseJson.value;
-            console.log(jokeChuckNorris);
         });
 }
 
@@ -48,7 +49,8 @@ const showJoke = joke => {
     buttonNextJoke.classList.add("btn-outline-success");
     buttonNextJoke.classList.add("button-next-joke");
     buttonNextJoke.innerHTML = "Próxima piada";
-    buttonNextJoke.addEventListener("click", () => {
+    buttonNextJoke.addEventListener("click", event => {
+        event.preventDefault();
         getJokeChuckNorris();
 
         setTimeout(() => {
