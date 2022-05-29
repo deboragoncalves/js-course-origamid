@@ -1,0 +1,32 @@
+[
+    {
+        "category": "women",
+        "competition": "vnl",
+        "goldenMedals": 12
+    },
+    {
+        "category": "men",
+        "competition": "vnl",
+        "goldenMedals": 10 
+    },
+    {
+        "category": "women",
+        "competition": "olympics",
+        "goldenMedals": 2
+    },
+    {
+        "category": "men",
+        "competition": "olympics",
+        "goldenMedals": 2 
+    },
+    {
+        "category": "women",
+        "competition": "worldChampionship",
+        "goldenMedals": 0
+    },
+    {
+        "category": "men",
+        "competition": "worldChampionship",
+        "goldenMedals": 3
+    }
+]

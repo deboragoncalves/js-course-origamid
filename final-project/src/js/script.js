@@ -6,7 +6,7 @@ import modalLogin from './modules/modal-login.js';
 import mapTooltip from './modules/map-tooltip.js';
 import dropdownMenu from './modules/dropdown-menu.js';
 import menuMobile from './modules/menu-mobile.js';
-import numberTitles from './modules/number-titles.js';
+import titles from './modules/titles.js';
 import timeOperation from './modules/time-operation.js';
 
 window.onload = () => {
@@ -18,7 +18,7 @@ window.onload = () => {
     mapTooltip();
     dropdownMenu();
     menuMobile();
-    numberTitles();
+    titles();
     timeOperation();
 };
 
