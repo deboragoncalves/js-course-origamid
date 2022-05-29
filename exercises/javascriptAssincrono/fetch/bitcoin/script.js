@@ -23,8 +23,8 @@ const styleParagraphs = () => {
 }
 
 const getBitconValue = () => {
-    let urlBitcon = "https://blockchain.info/ticker";
-    fetch(urlBitcon)
+    const URL_BITCOIN = "https://blockchain.info/ticker";
+    fetch(URL_BITCOIN)
         .then(response => response.json())
         .then(responseJson => {
             if (!responseJson || !responseJson.BRL || !responseJson.BRL.buy) return;
