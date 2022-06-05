@@ -7,7 +7,6 @@ const watchGames = () => {
 
 async function createContentWatchGames() {
     let bitcoinValueBRL = await getBitconValue();
-    console.log(bitcoinValueBRL)
 
     // Exibir preço ficticio assinatura em bitcoin
     // toFixed - casas decimais
