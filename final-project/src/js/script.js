@@ -9,6 +9,7 @@ import menuMobile from './modules/menu-mobile.js';
 import titles from './modules/titles.js';
 import timeOperation from './modules/time-operation.js';
 import watchGames from './modules/watch-games.js';
+import countDownOlympicGames from './modules/countdown-olympic-games.js';
 
 window.onload = () => {
     addLinksMenu();
@@ -21,7 +22,8 @@ window.onload = () => {
     menuMobile();
     titles();
     timeOperation();
-    watchGames()
+    watchGames();
+    countDownOlympicGames();
 };
 
 /* TODO: Adicionar imagens às competições

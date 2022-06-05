@@ -12,7 +12,6 @@ async function createContentWatchGames() {
     // toFixed - casas decimais
     let priceWatchGames = 5000 / bitcoinValueBRL;
     priceWatchGames = priceWatchGames.toFixed(4);
-    console.log(priceWatchGames);
     
     let sectionWachGames = document.querySelector("#watch-games");
     let titleWatchGames = document.createElement("h5");

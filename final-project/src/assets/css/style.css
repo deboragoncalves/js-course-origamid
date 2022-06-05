@@ -119,6 +119,11 @@ ul {
     text-decoration: solid;
 }
 
+#countdown-olympics {
+    padding-left: 50px;
+    padding-bottom: 30px;
+}
+
 @media (max-width: 700px) {
     #list-navbar {
         display: none;
