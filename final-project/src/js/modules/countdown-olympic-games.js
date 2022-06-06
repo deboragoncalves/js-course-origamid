@@ -3,14 +3,6 @@ class CountDown {
         // atributo ou método interno da classe inicia com _
         this._futureDate = futureDate;
     }
-    
-    get _getFutureDate() {
-        return this._futureDate;
-    }
-
-    set _setFutureDate(futureDate) {
-        this._futureDate = futureDate;
-    }
 
     get _currentDate() {
         return new Date();
@@ -22,7 +14,7 @@ class CountDown {
     }
 
     // diferença dias: ms total / ms em um dia
-    get countDays() {
+    get _countDays() {
         const days = this._diffMilliseconds / (24 * 60 * 60 * 1000);
 
         // arredondar para baixo com Math.floor
@@ -35,11 +27,9 @@ const countDownOlympicGames = () => {
     let dateOlympicGames = new Date('2024-07-26T00:00:00');
 
     let countDown = new CountDown(dateOlympicGames);
-    console.log(countDown._futureDate);
 
     // métodos são chamados como se fossem propriedades, sem parênteses ()
-    let countDays = countDown.countDays;
-    console.log(countDays);
+    let countDays = countDown._countDays;
 
     showCountDown(countDays);
 };
