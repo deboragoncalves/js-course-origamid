@@ -28,6 +28,25 @@
         font-size: 16px;
     }
 
+    input.border-green {
+        border: 1px solid green;
+    }
+
+    input.border-red {
+        border: 1px solid red;
+    }
+
+    .span-invalid-cpf {
+        color: red;
+        margin: 10px 0;
+        font-size: 16px;
+        display: none;
+    }
+
+    .span-invalid-cpf.show {
+        display: block;
+    }
+
     input::placeholder {
         color: rgba(0, 0, 0, 0.4);
     }
@@ -37,10 +56,6 @@
         <div class="container">
             <label for="cpf">CPF:</label>
             <input type="text" id="cpf" name="cpf" placeholder="***.***.***-**">
-        </div>
-        <div class="container">
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email">
         </div>
     </form>
     <script type="module" src="script.js"></script>
