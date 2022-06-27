@@ -7,6 +7,9 @@ let inputCpf = document.querySelector("#cpf");
 inputCpf.addEventListener("change", (event) => {
     userCpf = event.target.value;
 
-    const validateCpf = new ValidateCpf(userCpf);
-    console.log(validateCpf.formatCpf());
+    const classValidateCpf = new ValidateCpf(userCpf);
+    const validCpf = classValidateCpf.validateCpf();
+
+    let cpf = validCpf ? classValidateCpf.formatCpf() : "CPF inválido";
+    console.log(cpf);
 });
