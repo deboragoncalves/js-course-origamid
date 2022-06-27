@@ -22,22 +22,22 @@ class CountDown {
     }
 }
 
+const showCountDown = (days) => {
+    const containerCountDown = document.getElementById('countdown-olympics');
+    containerCountDown.classList.add('titles');
+    containerCountDown.innerHTML = `Faltam ${days} para as Olimpíadas de Paris!`;
+};
+
 const countDownOlympicGames = () => {
     // 26/07/2024
-    let dateOlympicGames = new Date('2024-07-26T00:00:00');
+    const dateOlympicGames = new Date('2024-07-26T00:00:00');
 
-    let countDown = new CountDown(dateOlympicGames);
+    const countDown = new CountDown(dateOlympicGames);
 
     // métodos são chamados como se fossem propriedades, sem parênteses ()
-    let countDays = countDown._countDays;
+    const countDays = countDown._countDays;
 
     showCountDown(countDays);
 };
 
-const showCountDown = days => {
-    let containerCountDown = document.getElementById("countdown-olympics");
-    containerCountDown.classList.add("titles");
-    containerCountDown.innerHTML = `Faltam ${days} para as Olimpíadas de Paris!`;
-}
-
-export default countDownOlympicGames; 
+export default countDownOlympicGames;

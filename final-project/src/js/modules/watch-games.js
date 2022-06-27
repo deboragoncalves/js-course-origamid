@@ -1,29 +1,34 @@
 // API Bitcoin https://blockchain.info/ticker
-// Chave sell 
+// Chave sell
 
-const watchGames = () => {
-    createContentWatchGames();
+async function getBitconValue() {
+    const URL_BITCOIN = 'https://blockchain.info/ticker';
+
+    const responseBitcoin = await fetch(URL_BITCOIN);
+    const responseBitcoinJson = await responseBitcoin.json();
+    const bitcoinValueBRL = responseBitcoinJson.BRL.sell;
+    return bitcoinValueBRL;
 }
 
 async function createContentWatchGames() {
-    let bitcoinValueBRL = await getBitconValue();
+    const bitcoinValueBRL = await getBitconValue();
 
     // Exibir preço ficticio assinatura em bitcoin
     // toFixed - casas decimais
     let priceWatchGames = 5000 / bitcoinValueBRL;
     priceWatchGames = priceWatchGames.toFixed(4);
-    
-    let sectionWachGames = document.querySelector("#watch-games");
-    let titleWatchGames = document.createElement("h5");
-    titleWatchGames.innerHTML = "Quer assistir a todos os jogos da Superliga?"
 
-    let linkWatchGames = document.createElement("a");
+    const sectionWachGames = document.querySelector('#watch-games');
+    const titleWatchGames = document.createElement('h5');
+    titleWatchGames.innerHTML = 'Quer assistir a todos os jogos da Superliga?';
 
-    linkWatchGames.innerHTML = "Assine o Canal Vôlei Brasil ";
-    linkWatchGames.setAttribute("href", "https://canalvoleibrasil.cbv.com.br/");
-    linkWatchGames.setAttribute("target", "_blank");
+    const linkWatchGames = document.createElement('a');
 
-    let textWatchGames = document.createElement("span");
+    linkWatchGames.innerHTML = 'Assine o Canal Vôlei Brasil ';
+    linkWatchGames.setAttribute('href', 'https://canalvoleibrasil.cbv.com.br/');
+    linkWatchGames.setAttribute('target', '_blank');
+
+    const textWatchGames = document.createElement('span');
     textWatchGames.innerHTML = `e pague apenas ${priceWatchGames} bitcoin por toda a temporada! `;
 
     sectionWachGames.appendChild(titleWatchGames);
@@ -31,13 +36,8 @@ async function createContentWatchGames() {
     sectionWachGames.appendChild(textWatchGames);
 }
 
-async function getBitconValue() {
-    const URL_BITCOIN = "https://blockchain.info/ticker";
-
-    let responseBitcoin = await fetch(URL_BITCOIN);
-    let responseBitcoinJson = await responseBitcoin.json();
-    let bitcoinValueBRL = responseBitcoinJson.BRL.sell;
-    return bitcoinValueBRL;
-}
+const watchGames = () => {
+    createContentWatchGames();
+};
 
 export default watchGames;
