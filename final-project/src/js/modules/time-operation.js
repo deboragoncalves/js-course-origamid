@@ -30,8 +30,6 @@ const timeOperation = () => {
     if (!textTimeOperation) return;
     const timeOperationDataset = textTimeOperation.dataset;
 
-    console.log(timeOperationDataset);
-
     let { week, hour } = timeOperationDataset;
 
     week = setStringToNumber(week);
