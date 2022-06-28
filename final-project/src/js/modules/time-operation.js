@@ -30,12 +30,14 @@ const timeOperation = () => {
     if (!textTimeOperation) return;
     const timeOperationDataset = textTimeOperation.dataset;
 
-    let [week, hours] = timeOperationDataset;
+    console.log(timeOperationDataset);
+
+    let { week, hour } = timeOperationDataset;
 
     week = setStringToNumber(week);
-    hours = setStringToNumber(hours);
+    hour = setStringToNumber(hour);
 
-    openClosed(week, hours);
+    openClosed(week, hour);
 };
 
 export default timeOperation;

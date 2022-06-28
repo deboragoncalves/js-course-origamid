@@ -11,6 +11,8 @@ import timeOperation from './modules/time-operation.js';
 import watchGames from './modules/watch-games.js';
 import countDownOlympicGames from './modules/countdown-olympic-games.js';
 
+console.log('Teste');
+
 window.onload = () => {
     addLinksMenu();
     addAltImg();
