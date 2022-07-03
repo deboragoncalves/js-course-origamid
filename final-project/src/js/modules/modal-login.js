@@ -1,28 +1,34 @@
-const elementModalLogin = document.querySelector('[data-modal="container"]');
-
-const toggleModalLogin = () => {
-    elementModalLogin.classList.toggle('modal-ativo');
-};
-
-const clickOutsideModal = (event) => {
-    // event.target = elemento clicado
-    // se o elemento clicado for o container do modal, fechar
-    const idElementClick = event.target.id;
-
-    if (idElementClick === 'modal-login') {
-        toggleModalLogin();
+class ModalLogin {
+    // This faz referência à propria classe
+    constructor(container, buttonOpen, buttonClose) {
+        // [data-modal="container"]
+        this.elementModalLogin = document.querySelector(container);
+        // [data-navbar="login"]
+        this.buttonOpenModal = document.querySelector(buttonOpen);
+        // [data-modal="close"]
+        this.buttonCloseModal = document.querySelector(buttonClose);
     }
-};
 
-const modalLogin = () => {
-    const loginMenu = document.querySelector('[data-navbar="login"]');
-    loginMenu.addEventListener('click', toggleModalLogin);
+    toggleModalLogin = () => {
+        this.elementModalLogin.classList.toggle('modal-ativo');
+    };
 
-    const buttonCloseModal = document.querySelector('[data-modal="close"');
-    buttonCloseModal.addEventListener('click', toggleModalLogin);
+    clickOutsideModal = (event) => {
+        // event.target = elemento clicado
+        // se o elemento clicado for o container do modal, fechar
+        const idElementClick = event.target.id;
 
-    // click container modal
-    elementModalLogin.addEventListener('click', clickOutsideModal);
-};
+        if (idElementClick === 'modal-login') {
+            this.toggleModalLogin();
+        }
+    };
 
-export default modalLogin;
+    initModalLogin = () => {
+        this.buttonOpenModal.addEventListener('click', this.toggleModalLogin);
+        this.buttonCloseModal.addEventListener('click', this.toggleModalLogin);
+
+        // click container modal
+        this.elementModalLogin.addEventListener('click', this.clickOutsideModal);
+    };
+}
+export default ModalLogin;
