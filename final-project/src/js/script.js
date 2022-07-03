@@ -18,7 +18,7 @@ window.onload = () => {
     const showCompetitions = new ShowCompetitions('.list-competitions li', '.list-descriptions li');
     showCompetitions.initShowCompetitions();
 
-    const modalLogin = new ModalLogin();
+    const modalLogin = new ModalLogin('[data-modal="container"]', '[data-navbar="login"]', '[data-modal="close"]');
     modalLogin.initModalLogin();
 
     const mapToolTip = new MapTooltip('[data-tooltip="map"]');

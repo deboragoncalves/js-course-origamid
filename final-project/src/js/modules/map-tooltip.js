@@ -47,6 +47,10 @@ class MapTooltip {
 
         return this;
     };
+
+    initMapTooltip = () => {
+        this.onMouseMove();
+    };
 }
 
 export default MapTooltip;
