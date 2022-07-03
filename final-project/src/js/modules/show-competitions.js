@@ -14,20 +14,24 @@ class ShowCompetitions {
             description.classList.remove(classActive);
         });
 
+        // Adiciona a classe ativo no item clicado
         this.listDescriptionsCompetitions[index].classList.add(classActive);
     };
 
     initShowCompetitions = () => {
         const classActive = 'active';
+
         if (this.listNamesCompetitions.length <= 0
             || this.listDescriptionsCompetitions.length <= 0) return;
+
         // Ao clicar na li, adicionar classe ativo
         this.listNamesCompetitions.forEach((nameCompetition, index) => {
             nameCompetition.addEventListener('click', () => {
                 this.addClassActive(index);
             });
         });
-        /* Primeiro elemento do item, ao carregar a página exibe a sua descrição,
+
+        /* Primeira descrição da competição é exibida ao carregar a página,
         iniciando com a classe ativo */
         this.listDescriptionsCompetitions[0].classList.add(classActive);
 

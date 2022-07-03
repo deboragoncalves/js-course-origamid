@@ -9,13 +9,14 @@ class ModalLogin {
         this.buttonCloseModal = document.querySelector(buttonClose);
     }
 
+    // Toggle - abre modal caso esteja fechado e vice versa
     toggleModalLogin = () => {
         this.elementModalLogin.classList.toggle('modal-ativo');
     };
 
     clickOutsideModal = (event) => {
         // event.target = elemento clicado
-        // se o elemento clicado for o container do modal, fechar
+        // se o elemento clicado for o container do modal, toggle
         const idElementClick = event.target.id;
 
         if (idElementClick === 'modal-login') {
@@ -24,6 +25,7 @@ class ModalLogin {
     };
 
     initModalLogin = () => {
+        // Adiciona evento para abrir/fechar modal
         this.buttonOpenModal.addEventListener('click', this.toggleModalLogin);
         this.buttonCloseModal.addEventListener('click', this.toggleModalLogin);
 
