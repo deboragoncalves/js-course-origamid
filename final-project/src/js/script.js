@@ -9,11 +9,11 @@ import titles from './modules/titles.js';
 import timeOperation from './modules/time-operation.js';
 import watchGames from './modules/watch-games.js';
 import countDownOlympicGames from './modules/countdown-olympic-games.js';
-import GetQuestions from './modules/show-questions.js';
+import ShowAnswers from './modules/show-answers.js';
 
 window.onload = () => {
-    const showQuestions = new GetQuestions('.list-questions');
-    showQuestions.getQuestions();
+    const showAnswers = new ShowAnswers('.list-questions');
+    showAnswers.initShowAnswers();
 
     addLinksMenu();
     addAltImg();

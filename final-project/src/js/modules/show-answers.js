@@ -1,4 +1,4 @@
-class GetQuestions {
+class ShowAnswers {
     constructor(listQuestions) {
         // .list-questions dt - perguntas
         this.listQuestions = document.querySelectorAll(`${listQuestions} dt`);
@@ -21,7 +21,7 @@ class GetQuestions {
         });
     };
 
-    getQuestions = () => {
+    initShowAnswers = () => {
         const classActive = 'active';
 
         // Selecionar todas as perguntas - dt
@@ -34,4 +34,4 @@ class GetQuestions {
     };
 }
 
-export default GetQuestions;
+export default ShowAnswers;
