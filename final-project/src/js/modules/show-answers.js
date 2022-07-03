@@ -31,6 +31,8 @@ class ShowAnswers {
 
         // Mostrar primeira resposta no onload
         this.listAnswers[0].classList.add(classActive);
+
+        return this;
     };
 }
 

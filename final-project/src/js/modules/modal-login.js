@@ -29,6 +29,10 @@ class ModalLogin {
 
         // click container modal
         this.elementModalLogin.addEventListener('click', this.clickOutsideModal);
+
+        /* Retornar sempre a classe no método init, assim tenho acesso às propriedades
+        e métodos do modal ao instanciar a classe */
+        return this;
     };
 }
 export default ModalLogin;

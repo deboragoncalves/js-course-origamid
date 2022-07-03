@@ -30,6 +30,8 @@ class ShowCompetitions {
         /* Primeiro elemento do item, ao carregar a página exibe a sua descrição,
         iniciando com a classe ativo */
         this.listDescriptionsCompetitions[0].classList.add(classActive);
+
+        return this;
     };
 }
 
