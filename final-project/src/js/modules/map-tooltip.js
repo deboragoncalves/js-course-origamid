@@ -44,6 +44,8 @@ class MapTooltip {
                 this.imageMap.addEventListener('mouseleave', this.removeTooltips);
             });
         }
+
+        return this;
     };
 }
 
