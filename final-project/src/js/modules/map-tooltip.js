@@ -1,48 +1,50 @@
-/* - HTML: adicionar data-tooltip - resgatar elemento no JS,
-- Quando tiver o evento de mousemove, criar elemento tooltip, com texto x, como último filho do body
-- Mouse leave = remover elemento
-- Tooltip = popover */
-
-const createTooltip = (event) => {
-    if (event) {
-        const tooptipMap = document.createElement('div');
-        tooptipMap.id = 'tooltip-map';
-
-        // Não criar classe tooltip = nome class bootstrap
-        tooptipMap.classList.add('tooltip-map');
-        // Posicionar - event.pageX = posição mouse eixo X
-        tooptipMap.style.top = `${event.pageY}px`;
-        tooptipMap.style.left = `${event.pageX}px`;
-        tooptipMap.innerText = 'Endereço da CBV';
-        document.body.appendChild(tooptipMap);
+class MapTooltip {
+    constructor(map) {
+        // [data-tooltip="map"]
+        // Tooltip/popover
+        this.imageMap = document.querySelector(map);
     }
-};
 
-const removeTooltips = () => {
-    const tooltipsMap = document.querySelectorAll('#tooltip-map');
+    // Criar toolTip
+    createTooltip = (event) => {
+        if (event) {
+            const tooptipMap = document.createElement('div');
+            tooptipMap.setAttribute('id', 'tooltip-map');
 
-    if (tooltipsMap) {
-        tooltipsMap.forEach((tooltip) => {
-            if (tooltip) {
-                tooltip.remove();
-            }
-        });
-    }
-};
+            // Não criar classe tooltip = nome class bootstrap
+            tooptipMap.classList.add('tooltip-map');
 
-const onMouseMove = () => {
-    const imageMap = document.querySelector('[data-tooltip="map"');
+            // Posicionar - event.pageX = posição mouse eixo X
+            tooptipMap.style.top = `${event.pageY}px`;
+            tooptipMap.style.left = `${event.pageX}px`;
+            tooptipMap.innerText = 'Endereço da CBV';
 
-    if (imageMap) {
-        imageMap.addEventListener('mousemove', (event) => {
-            createTooltip(event);
-            imageMap.addEventListener('mouseleave', removeTooltips);
-        });
-    }
-};
+            document.body.appendChild(tooptipMap);
+        }
+    };
 
-const mapTooltip = () => {
-    onMouseMove();
-};
+    // Remove tooltip caso clique fora do mapa
+    removeTooltips = () => {
+        const tooltipsMap = document.querySelectorAll('#tooltip-map');
 
-export default mapTooltip;
+        if (tooltipsMap) {
+            tooltipsMap.forEach((tooltip) => {
+                if (tooltip) {
+                    tooltip.remove();
+                }
+            });
+        }
+    };
+
+    // Quando o mouse se mover no mapa, criar tooltip e remover quando sair
+    onMouseMove = () => {
+        if (this.imageMap) {
+            this.imageMap.addEventListener('mousemove', (event) => {
+                this.createTooltip(event);
+                this.imageMap.addEventListener('mouseleave', this.removeTooltips);
+            });
+        }
+    };
+}
+
+export default MapTooltip;

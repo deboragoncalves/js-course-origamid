@@ -1,6 +1,5 @@
 import addLinksMenu from './modules/links-navbar.js';
 import addAltImg from './modules/alt-images.js';
-import mapTooltip from './modules/map-tooltip.js';
 import dropdownMenu from './modules/dropdown-menu.js';
 import menuMobile from './modules/menu-mobile.js';
 import titles from './modules/titles.js';
@@ -10,6 +9,7 @@ import countDownOlympicGames from './modules/countdown-olympic-games.js';
 import ModalLogin from './modules/modal-login.js';
 import ShowCompetitions from './modules/show-competitions.js';
 import ShowAnswers from './modules/show-answers.js';
+import MapTooltip from './modules/map-tooltip.js';
 
 window.onload = () => {
     const showAnswers = new ShowAnswers('.list-questions');
@@ -20,9 +20,12 @@ window.onload = () => {
 
     const modalLogin = new ModalLogin('[data-modal="container"]', '[data-navbar="login"]', '[data-modal="close"]');
     modalLogin.initModalLogin();
+
+    const mapToolTip = new MapTooltip('[data-tooltip="map"]');
+    mapToolTip.onMouseMove();
+
     addLinksMenu();
     addAltImg();
-    mapTooltip();
     dropdownMenu();
     menuMobile();
     titles();
