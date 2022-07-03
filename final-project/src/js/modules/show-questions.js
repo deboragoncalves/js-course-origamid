@@ -1,27 +1,37 @@
-const showAnswer = (event) => {
-    const classActive = 'active';
+class GetQuestions {
+    constructor(listQuestions) {
+        // .list-questions dt - perguntas
+        this.listQuestions = document.querySelectorAll(`${listQuestions} dt`);
+        // .list-questions dd - respostas
+        this.listAnswers = document.querySelectorAll(`${listQuestions} dd`);
+    }
 
-    // Item clicado
-    const questionClicked = event.currentTarget;
-    const answer = questionClicked.nextElementSibling;
-    answer.classList.toggle(classActive);
-};
+    showAnswer = (event) => {
+        const classActive = 'active';
 
-const getQuestions = () => {
-    const classActive = 'active';
+        // Item clicado
+        const questionClicked = event.currentTarget;
+        const answer = questionClicked.nextElementSibling;
+        answer.classList.toggle(classActive);
+    };
 
-    // Selecionar todas as perguntas - dt
-    const listQuestions = document.querySelectorAll('.list-questions dt');
+    clickShowAnswer = () => {
+        this.listQuestions.forEach((question) => {
+            question.addEventListener('click', (event) => this.showAnswer(event));
+        });
+    };
 
-    if (listQuestions.length <= 0) return;
+    getQuestions = () => {
+        const classActive = 'active';
 
-    listQuestions.forEach((question) => {
-        question.addEventListener('click', showAnswer);
-    });
+        // Selecionar todas as perguntas - dt
+        if (this.listQuestions.length <= 0) return;
 
-    // Mostrar primeira resposta no onload
-    const listAnswers = document.querySelectorAll('.list-questions dd');
-    listAnswers[0].classList.add(classActive);
-};
+        this.clickShowAnswer();
 
-export default getQuestions;
+        // Mostrar primeira resposta no onload
+        this.listAnswers[0].classList.add(classActive);
+    };
+}
+
+export default GetQuestions;
