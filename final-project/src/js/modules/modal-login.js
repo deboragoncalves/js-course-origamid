@@ -25,7 +25,7 @@ class ModalLogin {
     };
 
     initModalLogin = () => {
-        if (!this.buttonOpenModal || !this.buttonCloseModal || this.elementModalLogin) return;
+        if (!this.buttonOpenModal || !this.buttonCloseModal || !this.elementModalLogin) return;
 
         // Adiciona evento para abrir/fechar modal
         this.buttonOpenModal.addEventListener('click', this.toggleModalLogin);
