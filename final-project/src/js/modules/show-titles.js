@@ -54,6 +54,7 @@ class ShowTitles {
 
         const category = title.category.toUpperCase();
         this.addSectionsMenWomen(category, containerTitle);
+        return this;
     };
 }
 
