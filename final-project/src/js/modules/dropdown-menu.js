@@ -1,38 +1,50 @@
 import clickOutsideElement from './click-outside-element.js';
 
-const classActive = 'active';
-const eventClick = 'click';
-const eventTouchStart = 'touchstart';
-let eventsShowMenu;
-
-const showMenuDropdown = (event) => {
-    event.preventDefault();
-    const elementDropdownMenuAbout = document.querySelector('.dropdown-menu-about');
-
-    if (elementDropdownMenuAbout) {
-        // Toggle: remove se existir; se não houver, add
-        elementDropdownMenuAbout.classList.toggle(classActive);
+class DropdownMenu {
+    constructor(dropdownMenuAbout) {
+        // .dropdown-menu-about
+        this.elementDropdownMenuAbout = document.querySelector(dropdownMenuAbout);
+        this.classActive = 'active';
+        this.eventClick = 'click';
+        this.eventTouchStart = 'touchstart';
+        this.eventsShowMenu = [];
     }
 
-    if (!eventsShowMenu || eventsShowMenu.length < 0) {
-        eventsShowMenu.push(eventClick);
-        eventsShowMenu.push(eventTouchStart);
-    }
+    // Se menu estiver aparecendo, esconde e vice-versa
+    showMenuDropdown = (event) => {
+        event.preventDefault();
 
-    clickOutsideElement(elementDropdownMenuAbout, eventsShowMenu);
-};
+        console.log(this.elementDropdownMenuAbout);
 
-const dropdownMenuAbout = () => {
-    const menuAbout = document.querySelector('[data-menu-dropdown="about"]');
+        if (this.elementDropdownMenuAbout) {
+            console.log('toggle active');
+            console.log(this.classActive);
+            this.elementDropdownMenuAbout.classList.add(this.classActive);
+            console.log(this.elementDropdownMenuAbout);
+        }
 
-    if (menuAbout) {
-        eventsShowMenu = [eventClick, eventTouchStart];
+        if (!this.eventsShowMenu || this.eventsShowMenu.length === 0) {
+            this.eventsShowMenu.push(this.eventClick);
+            this.eventsShowMenu.push(this.eventTouchStart);
+        }
 
-        // Touchstart - acontece de forma instantânea, click - delay
-        eventsShowMenu.forEach((eventShow) => {
-            menuAbout.addEventListener(eventShow, showMenuDropdown);
-        });
-    }
-};
+        clickOutsideElement(this.elementDropdownMenuAbout, this.eventsShowMenu);
+    };
 
-export default dropdownMenuAbout;
+    // Adiciona os eventos de touch e click no menu
+    // Touchstart - acontece de forma instantânea, click - delay
+    initDropdownMenu = () => {
+        const menuAbout = document.querySelector('[data-menu-dropdown="about"]');
+
+        if (menuAbout) {
+            this.eventsShowMenu = [this.eventClick, this.eventTouchStart];
+
+            this.eventsShowMenu.forEach((eventShow) => {
+                console.log(eventShow);
+                menuAbout.addEventListener(eventShow, this.showMenuDropdown);
+            });
+        }
+    };
+}
+
+export default DropdownMenu;
