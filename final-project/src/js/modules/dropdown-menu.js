@@ -44,6 +44,8 @@ class DropdownMenu {
                 menuAbout.addEventListener(eventShow, this.showMenuDropdown);
             });
         }
+
+        return this;
     };
 }
 
