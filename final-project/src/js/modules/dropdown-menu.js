@@ -14,13 +14,8 @@ class DropdownMenu {
     showMenuDropdown = (event) => {
         event.preventDefault();
 
-        console.log(this.elementDropdownMenuAbout);
-
         if (this.elementDropdownMenuAbout) {
-            console.log('toggle active');
-            console.log(this.classActive);
             this.elementDropdownMenuAbout.classList.add(this.classActive);
-            console.log(this.elementDropdownMenuAbout);
         }
 
         if (!this.eventsShowMenu || this.eventsShowMenu.length === 0) {
@@ -40,7 +35,6 @@ class DropdownMenu {
             this.eventsShowMenu = [this.eventClick, this.eventTouchStart];
 
             this.eventsShowMenu.forEach((eventShow) => {
-                console.log(eventShow);
                 menuAbout.addEventListener(eventShow, this.showMenuDropdown);
             });
         }

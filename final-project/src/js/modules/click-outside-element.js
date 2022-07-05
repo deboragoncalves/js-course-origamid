@@ -2,6 +2,8 @@ const classActive = 'active';
 
 // Se clicar em algum item que não faça parte do menu, remove a classe ativo, escondendo o menu
 const clickOutsideElement = (element, events) => {
+    if (!element || !events) return;
+
     const html = document.documentElement;
 
     const removeClassActive = (event) => {
