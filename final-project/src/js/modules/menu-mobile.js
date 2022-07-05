@@ -1,14 +1,26 @@
-const listMenu = document.querySelector('#list-navbar');
-const buttonMenuMobile = document.querySelector('[data-menu-mobile="button"]');
+class MenuMobile {
+    constructor(listNavbar, iconMenuMobile) {
+        // #list-navbar
+        this.listMenu = document.querySelector(listNavbar);
+        // [data-menu-mobile="button"]
+        this.buttonMenuMobile = document.querySelector(iconMenuMobile);
+        this.active = 'active';
+    }
 
-const active = 'active';
+    // Exibe ou esconde o botão
+    showMenuMobile = () => {
+        if (!this.listMenu || !this.active) return;
 
-const showMenuMobile = () => {
-    listMenu.classList.toggle(active);
-};
+        this.listMenu.classList.toggle(this.active);
+    };
 
-const menuMobile = () => {
-    buttonMenuMobile.addEventListener('click', showMenuMobile);
-};
+    // Adiciona o evento de click ao ícone do menu
+    initMenuMobile = () => {
+        if (!this.buttonMenuMobile) return;
 
-export default menuMobile;
+        this.buttonMenuMobile.addEventListener('click', this.showMenuMobile);
+        return this;
+    };
+}
+
+export default MenuMobile;

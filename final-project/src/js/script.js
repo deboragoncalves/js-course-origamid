@@ -1,6 +1,5 @@
 import addLinksMenu from './modules/links-navbar.js';
 import addAltImg from './modules/alt-images.js';
-import menuMobile from './modules/menu-mobile.js';
 import timeOperation from './modules/time-operation.js';
 import watchGames from './modules/watch-games.js';
 import countDownOlympicGames from './modules/countdown-olympic-games.js';
@@ -10,6 +9,7 @@ import ShowCompetitions from './modules/show-competitions.js';
 import ShowAnswers from './modules/show-answers.js';
 import MapTooltip from './modules/map-tooltip.js';
 import getTitles from './modules/get-titles.js';
+import MenuMobile from './modules/menu-mobile.js';
 
 window.onload = () => {
     const showAnswers = new ShowAnswers('.list-questions');
@@ -27,11 +27,13 @@ window.onload = () => {
     const dropdownMenu = new DropdownMenu();
     dropdownMenu.initDropdownMenu();
 
+    const menuMobile = new MenuMobile('#list-navbar', '[data-menu-mobile="button"]');
+    menuMobile.initMenuMobile();
+
     getTitles();
 
     addLinksMenu();
     addAltImg();
-    menuMobile();
     timeOperation();
     watchGames();
     countDownOlympicGames();
