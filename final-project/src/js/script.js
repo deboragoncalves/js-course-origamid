@@ -24,7 +24,7 @@ window.onload = () => {
     const mapToolTip = new MapTooltip('[data-tooltip="map"]');
     mapToolTip.onMouseMove();
 
-    const dropdownMenu = new DropdownMenu();
+    const dropdownMenu = new DropdownMenu('.dropdown-menu-about', '[data-menu-dropdown="about"]');
     dropdownMenu.initDropdownMenu();
 
     const menuMobile = new MenuMobile('#list-navbar', '[data-menu-mobile="button"]');

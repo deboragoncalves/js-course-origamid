@@ -1,9 +1,12 @@
 import clickOutsideElement from './click-outside-element.js';
 
 class DropdownMenu {
-    constructor(dropdownMenuAbout) {
+    constructor(dropdownMenuAbout, listMenuAbout) {
         // .dropdown-menu-about
         this.elementDropdownMenuAbout = document.querySelector(dropdownMenuAbout);
+        // [data-menu-dropdown="about"]
+        this.menuAbout = document.querySelector(listMenuAbout);
+
         this.classActive = 'active';
         this.eventClick = 'click';
         this.eventTouchStart = 'touchstart';
@@ -29,13 +32,11 @@ class DropdownMenu {
     // Adiciona os eventos de touch e click no menu
     // Touchstart - acontece de forma instantânea, click - delay
     initDropdownMenu = () => {
-        const menuAbout = document.querySelector('[data-menu-dropdown="about"]');
-
-        if (menuAbout) {
+        if (this.menuAbout) {
             this.eventsShowMenu = [this.eventClick, this.eventTouchStart];
 
             this.eventsShowMenu.forEach((eventShow) => {
-                menuAbout.addEventListener(eventShow, this.showMenuDropdown);
+                this.menuAbout.addEventListener(eventShow, this.showMenuDropdown);
             });
         }
 
