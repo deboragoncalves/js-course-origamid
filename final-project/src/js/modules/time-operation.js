@@ -1,41 +1,61 @@
-const setStringToNumber = (array) => {
-    if (!array || array.length < 0) return;
+class TimeOperation {
+    constructor(timeOperation, openClose) {
+        // [data-week]
+        this.textTimeOperation = document.querySelector(timeOperation);
+        // #open-close
+        this.textOpenClose = document.querySelector(openClose);
+    }
 
-    // Map não modifica o array original
-    // + - string to number ou parseInt()
-    const newArray = array.split(',').map((item) => +item);
-    return newArray;
-};
+    setStringToNumber = (array) => {
+        if (!array || array.length < 0) return;
 
-const openClosed = (arrayWeek, arrayHours) => {
-    if (!arrayWeek || arrayWeek.length < 0 || !arrayHours || arrayHours.length < 0) return;
+        // Map não modifica o array original
+        // + (string to number) ou parseInt()
+        const newArray = array.split(',').map((item) => +item);
+        return newArray;
+    };
 
-    const textOpenClose = document.querySelector('#open-close');
-    if (!textOpenClose) return;
-    const currentDate = new Date();
+    getCurrentDate = () => {
+        const currentDate = new Date();
 
-    // Get date - retorna dia do mes, get day - retorna dia da semana, iniciando com 0 - domingo
-    const currentDay = currentDate.getDay();
-    const currentHour = currentDate.getHours();
+        // Get date - retorna dia do mes, get day - retorna dia da semana, iniciando com 0 - domingo
+        const currentDay = currentDate.getDay();
+        const currentHour = currentDate.getHours();
 
-    const weekOpen = arrayWeek.includes(currentDay);
-    const hourOpen = currentHour >= arrayHours[0] && currentHour < arrayHours[1];
+        return {
+            currentDay,
+            currentHour,
+        };
+    };
 
-    weekOpen && hourOpen ? textOpenClose.innerText = 'Aberto' : textOpenClose.innerText = 'Fechado';
-};
+    // De acordo com a data atual e horário de funcionamento (arrayWeek e arrayHours)
+    // verifica aberto/fechado
+    openClosed = (arrayWeek, arrayHours) => {
+        if (!arrayWeek || arrayWeek.length < 0 || !arrayHours || arrayHours.length < 0) return;
 
-const timeOperation = () => {
-    const textTimeOperation = document.querySelector('[data-week]');
+        if (!this.textOpenClose) return;
 
-    if (!textTimeOperation) return;
-    const timeOperationDataset = textTimeOperation.dataset;
+        const { currentDay, currentHour } = this.getCurrentDate();
+        const weekOpen = arrayWeek.includes(currentDay);
+        const hourOpen = currentHour >= arrayHours[0] && currentHour < arrayHours[1];
 
-    let { week, hour } = timeOperationDataset;
+        weekOpen && hourOpen ? this.textOpenClose.innerText = 'Aberto' : this.textOpenClose.innerText = 'Fechado';
+    };
 
-    week = setStringToNumber(week);
-    hour = setStringToNumber(hour);
+    // Resgata um objeto com os atributos data-week e data-hour da tag p
+    // data-week="1,2,3,4,5" data - hour="8,18"
+    initTimeOperation = () => {
+        if (!this.textTimeOperation) return;
 
-    openClosed(week, hour);
-};
+        const timeOperationDataset = this.textTimeOperation.dataset;
 
-export default timeOperation;
+        let { week, hour } = timeOperationDataset;
+        week = this.setStringToNumber(week);
+        hour = this.setStringToNumber(hour);
+
+        this.openClosed(week, hour);
+        return this;
+    };
+}
+
+export default TimeOperation;

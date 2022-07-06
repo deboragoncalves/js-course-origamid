@@ -1,8 +1,8 @@
 import addLinksMenu from './modules/links-navbar.js';
 import addAltImg from './modules/alt-images.js';
-import timeOperation from './modules/time-operation.js';
 import watchGames from './modules/watch-games.js';
 import countDownOlympicGames from './modules/countdown-olympic-games.js';
+import TimeOperation from './modules/time-operation.js';
 import DropdownMenu from './modules/dropdown-menu.js';
 import ModalLogin from './modules/modal-login.js';
 import ShowCompetitions from './modules/show-competitions.js';
@@ -30,11 +30,13 @@ window.onload = () => {
     const menuMobile = new MenuMobile('#list-navbar', '[data-menu-mobile="button"]');
     menuMobile.initMenuMobile();
 
+    const timeOperation = new TimeOperation('[data-week]', '#open-close');
+    timeOperation.initTimeOperation();
+
     getTitles();
 
     addLinksMenu();
     addAltImg();
-    timeOperation();
     watchGames();
     countDownOlympicGames();
 };
