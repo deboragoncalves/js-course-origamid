@@ -1,19 +1,28 @@
-const addAltImg = () => {
-    const images = document.querySelectorAll('img');
-    images.forEach((image) => {
-        if (image.hasAttribute('alt')) {
-            return;
-        }
+class AddAltImg {
+    constructor(allImages) {
+        // img
+        this.images = document.querySelectorAll(allImages);
+    }
 
-        let srcAttribute = image.getAttribute('src');
-        if (srcAttribute) {
-            srcAttribute = srcAttribute.toUpperCase();
+    // Se as images do site não tiverem atributo alt, seta esse atributo
+    intAddAltImg = () => {
+        if (!this.images) return;
 
-            if (srcAttribute.includes('MAPA')) {
-                image.setAttribute('alt', 'Mapa com a localização da Confederação Brasileira de Vôlei');
+        this.images.forEach((image) => {
+            if (image.hasAttribute('alt')) {
+                return;
             }
-        }
-    });
-};
 
-export default addAltImg;
+            let srcAttribute = image.getAttribute('src');
+            if (srcAttribute) {
+                srcAttribute = srcAttribute.toUpperCase();
+
+                if (srcAttribute.includes('MAPA')) {
+                    image.setAttribute('alt', 'Mapa com a localização da Confederação Brasileira de Vôlei');
+                }
+            }
+        });
+    };
+}
+
+export default AddAltImg;

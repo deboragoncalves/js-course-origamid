@@ -1,5 +1,4 @@
 import addLinksMenu from './modules/links-navbar.js';
-import addAltImg from './modules/alt-images.js';
 import watchGames from './modules/watch-games.js';
 import countDownOlympicGames from './modules/countdown-olympic-games.js';
 import TimeOperation from './modules/time-operation.js';
@@ -10,6 +9,7 @@ import ShowAnswers from './modules/show-answers.js';
 import MapTooltip from './modules/map-tooltip.js';
 import getTitles from './modules/get-titles.js';
 import MenuMobile from './modules/menu-mobile.js';
+import AddAltImg from './modules/alt-images.js';
 
 window.onload = () => {
     const showAnswers = new ShowAnswers('.list-questions');
@@ -33,16 +33,18 @@ window.onload = () => {
     const timeOperation = new TimeOperation('[data-week]', '#open-close');
     timeOperation.initTimeOperation();
 
+    const addAltImg = new AddAltImg('img');
+    addAltImg.intAddAltImg();
+
     getTitles();
 
     addLinksMenu();
-    addAltImg();
-    watchGames();
     countDownOlympicGames();
+    watchGames();
 };
 
-/* TODO: Adicionar imagens às competições
+/*
+TODO: Refatorar addLinksMenu, countDownOlympicGames
 TODO: Responsivo - matchMedia
 TODO: Funcionalidade login
-TODO: Fechar menu dropdown/mobile quando clicar fora
 TODO: Corrigir bug tooltip */
