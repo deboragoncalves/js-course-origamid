@@ -1,4 +1,3 @@
-import addLinksMenu from './modules/links-navbar.js';
 import watchGames from './modules/watch-games.js';
 import countDownOlympicGames from './modules/countdown-olympic-games.js';
 import TimeOperation from './modules/time-operation.js';
@@ -10,6 +9,7 @@ import MapTooltip from './modules/map-tooltip.js';
 import getTitles from './modules/get-titles.js';
 import MenuMobile from './modules/menu-mobile.js';
 import AddAltImg from './modules/alt-images.js';
+import AddLinksMenu from './modules/links-navbar.js';
 
 window.onload = () => {
     const showAnswers = new ShowAnswers('.list-questions');
@@ -36,9 +36,11 @@ window.onload = () => {
     const addAltImg = new AddAltImg('img');
     addAltImg.intAddAltImg();
 
+    const addLinksMenu = new AddLinksMenu('.link-menu');
+    addLinksMenu.initAddLinksMenu();
+
     getTitles();
 
-    addLinksMenu();
     countDownOlympicGames();
     watchGames();
 };
