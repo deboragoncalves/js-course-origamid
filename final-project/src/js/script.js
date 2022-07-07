@@ -1,15 +1,15 @@
 import watchGames from './modules/watch-games.js';
-import countDownOlympicGames from './modules/countdown-olympic-games.js';
+import getTitles from './modules/get-titles.js';
 import TimeOperation from './modules/time-operation.js';
 import DropdownMenu from './modules/dropdown-menu.js';
 import ModalLogin from './modules/modal-login.js';
 import ShowCompetitions from './modules/show-competitions.js';
 import ShowAnswers from './modules/show-answers.js';
 import MapTooltip from './modules/map-tooltip.js';
-import getTitles from './modules/get-titles.js';
 import MenuMobile from './modules/menu-mobile.js';
 import AddAltImg from './modules/alt-images.js';
 import AddLinksMenu from './modules/links-navbar.js';
+import CountDownOlympicGames from './modules/countdown-olympic-games.js';
 
 window.onload = () => {
     const showAnswers = new ShowAnswers('.list-questions');
@@ -39,14 +39,14 @@ window.onload = () => {
     const addLinksMenu = new AddLinksMenu('.link-menu');
     addLinksMenu.initAddLinksMenu();
 
-    getTitles();
+    const countDownOlympicGames = new CountDownOlympicGames('countdown-olympics');
+    countDownOlympicGames.initCountDownOlympicGames();
 
-    countDownOlympicGames();
+    getTitles();
     watchGames();
 };
 
 /*
-TODO: Refatorar addLinksMenu, countDownOlympicGames
 TODO: Responsivo - matchMedia
 TODO: Funcionalidade login
 TODO: Corrigir bug tooltip */
