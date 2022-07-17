@@ -58,9 +58,16 @@ ul {
 }
 
 #competitions {
-    display: flex;
     margin-top: 50px;
     padding-left: 50px;
+}
+
+.list-competitions {
+    display: flex;
+}
+
+.list-competitions .second, .list-competitions .third {
+    padding-left: 20px;
 }
 
 #contact img {
@@ -109,11 +116,24 @@ ul {
 }
 
 .list-descriptions li.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-descriptions img {
+    border-radius: 5%;
+    margin-top: 20px;
+    opacity: 0.3;
+}
+
+.list-descriptions img:hover {
+    opacity: 1;
 }
 
 .list-questions dt {
     cursor: pointer;
+    margin: 20px 0;
 }
 
 .list-questions dd {
