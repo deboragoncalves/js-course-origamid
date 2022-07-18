@@ -34,6 +34,14 @@ async function createContentWatchGames() {
     sectionWachGames.appendChild(titleWatchGames);
     sectionWachGames.appendChild(linkWatchGames);
     sectionWachGames.appendChild(textWatchGames);
+
+    const imageChannel = document.createElement('img');
+    imageChannel.setAttribute('src', 'assets/images/canal volei brasil.jpg');
+    imageChannel.setAttribute('alt', 'Comentaristas Canal Vôlei Brasil');
+    imageChannel.setAttribute('width', '500');
+    imageChannel.setAttribute('height', '300');
+
+    sectionWachGames.appendChild(imageChannel);
 }
 
 const watchGames = () => {
