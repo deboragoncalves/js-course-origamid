@@ -237,4 +237,8 @@ ul {
         padding-left: 20px;
         padding-bottom: 0;
     }
+
+    #slide-titles img {
+        padding: 20px 0;
+    }
 }
