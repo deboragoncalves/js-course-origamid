@@ -25,3 +25,13 @@
 #watch-games img:hover {
     opacity: 1;
 }
+
+@media (max-width: 700px) {
+    #watch-games {
+        padding-left: 20px;
+    }
+    
+    #watch-games img {
+        max-width: 100%;
+    }
+}

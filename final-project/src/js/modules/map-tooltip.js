@@ -25,9 +25,6 @@ class MapTooltip {
             }
 
             document.body.appendChild(tooptipMap);
-
-            console.log('Tooltip');
-            console.log(tooptipMap);
         }
     };
 

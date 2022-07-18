@@ -8,6 +8,7 @@
 body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 a {
@@ -161,6 +162,10 @@ ul {
 }
 
 @media (max-width: 700px) {
+    body, html {
+        width: 100%;
+    }
+
     #list-navbar {
         display: none;
     }
@@ -176,5 +181,44 @@ ul {
     .container-navbar {
         padding-top: 0;
         height: auto;
+    }
+
+    #contact {
+        flex-direction: column;
+    }
+
+    .list-competitions {
+        flex-direction: column;
+    }
+
+    .list-competitions .second, .list-competitions .third {
+        padding-left: 0;
+    }
+
+    #competitions {
+        margin-top: 10px;
+        padding-left: 0;
+    }
+
+    #contact img, .list-descriptions img {
+        max-width: 100%;
+    }
+
+    #gif-countdown {
+        margin-bottom: 10px;
+    }
+
+    .main-container h1 {
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+
+    #faq, #contact {
+        padding-left: 20px;
+    }
+
+    #countdown-olympics {
+        padding-left: 20px;
+        padding-bottom: 0;
     }
 }
