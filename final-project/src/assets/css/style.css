@@ -4,6 +4,7 @@
 @import 'menu-mobile.css';
 @import 'titles.css';
 @import 'watch-games.css';
+@import 'slide.css';
 
 body {
     margin: 0;

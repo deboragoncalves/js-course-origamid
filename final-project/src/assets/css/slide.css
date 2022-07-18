@@ -1,0 +1,11 @@
+.list-slide-titles {
+    display: flex;
+    overflow: hidden;
+}
+
+.list-slide-titles li {
+    width: 80%;
+    flex-shrink: 0;
+    /* não espremer o tamanho das imagens, deixar em tamanho normal */
+    margin: 0 20px;
+}
