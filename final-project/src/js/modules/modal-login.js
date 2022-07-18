@@ -41,11 +41,6 @@ class ModalLogin {
         let emailValue = this.email.value;
         let passwordValue = this.password.value;
 
-        console.log('Email: ');
-        console.log(emailValue);
-        console.log('Senha: ');
-        console.log(passwordValue);
-
         // Email - tirar espaços em branco, validar @ e .com
         emailValue = emailValue.replace(/[ ]/g, '');
 
@@ -79,6 +74,7 @@ class ModalLogin {
 
         if (!emailValue.match(regexEmail)) {
             this.errorMessage.innerHTML = 'Email inválido';
+            this.errorMessage.style.display = 'block';
             validFields = false;
             return validFields;
         }
