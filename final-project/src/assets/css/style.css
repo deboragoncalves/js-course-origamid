@@ -4,7 +4,6 @@
 @import 'menu-mobile.css';
 @import 'titles.css';
 @import 'watch-games.css';
-@import 'slide.css';
 
 body {
     margin: 0;
@@ -160,6 +159,22 @@ ul {
 #countdown-olympics {
     padding-left: 50px;
     padding-bottom: 30px;
+}
+
+#slide-titles img {
+    width: 100%;
+    padding: 20px 200px;
+    opacity: 0.7;
+}
+
+#slide-titles img:hover {
+    opacity: 1;
+}
+
+.carousel-caption p {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
 }
 
 @media (max-width: 700px) {
