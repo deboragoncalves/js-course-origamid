@@ -19,7 +19,15 @@ class MapTooltip {
             tooptipMap.style.left = `${event.pageX}px`;
             tooptipMap.innerText = 'Endereço da CBV';
 
+            // Remover todos os tooltips antes de adicionar, para evitar duplicação
+            if (tooptipMap) {
+                this.removeTooltips();
+            }
+
             document.body.appendChild(tooptipMap);
+
+            console.log('Tooltip');
+            console.log(tooptipMap);
         }
     };
 
